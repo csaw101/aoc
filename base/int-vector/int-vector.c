@@ -133,8 +133,22 @@ void parse_string_to_int_vector(IntVector* vector, string str) {
 }
 
 void remove_int_from_vector(IntVector* vector, u32 index) {
+	if (index >= vector->length) {
+		printf("Error: Our of bounds deletion\n");
+		exit(1);
+	}
 	for (u32 i = index; i < vector->length - 1; i++) {
 		vector->ints[i] = vector->ints[i + 1];
 	}
 	vector->length--;
+}
+
+IntVector* copy_int_vector(const IntVector* vector) {
+	IntVector* new_vector =
+		create_int_vector(vector->capacity, vector->compare_ints);
+	new_vector->length = vector->length;
+	for (u64 i = 0; i < new_vector->length; i++)
+		new_vector->ints[i] = vector->ints[i];
+	new_vector->sorted = new_vector->sorted;
+	return new_vector;
 }

@@ -18,7 +18,8 @@ string read_file_into_string(const string file_name);
 
 // Errors
 enum Error {
-	MEMORY_ALLOCATION_FAILED
+	MEMORY_ALLOCATION_FAILED,
+	OUT_OF_BOUNDS_ARRAY_ACCESS
 };
 
 void print_error_then_exit(enum Error error);

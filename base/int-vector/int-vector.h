@@ -24,5 +24,6 @@ void empty_int_vector(IntVector* vector);
 void parse_string_to_int_vector(IntVector* vector, string str);
 void remove_int_from_vector(IntVector* vector, u32 index);
 void destroy_int_vector(IntVector* vector);
+IntVector* copy_int_vector(const IntVector* vector);
 
 #endif // INT_VECTOR_H

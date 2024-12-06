@@ -47,7 +47,10 @@ string read_file_into_string(const string file_name) {
 
 // Errors
 void print_error_then_exit(enum Error error) {
+	printf("ERROR: ");
 	if (error == MEMORY_ALLOCATION_FAILED)
 		printf("Memory allocation failed\n");
+	else if (error == OUT_OF_BOUNDS_ARRAY_ACCESS)
+		printf("Out of bounds array access\n");
 	exit(1);
 }
